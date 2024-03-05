@@ -2,20 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reddit-deployment
+  name: tetris-deployment
 spec:
   replicas: 2 # You can adjust the number of replicas as needed
   selector:
     matchLabels:
-      app: reddit
+      app: tetris
   template:
     metadata:
       labels:
-        app: reddit
+        app: tetris
     spec:
       containers:
-        - name: reddit
-          image: imkiran13/reddit # Replace with the actual image tag
+        - name: tetris
+          image: adijaiswal/tetris:v1 # Replace with the actual image tag
           ports:
-            - containerPort: 80 # Replace with the port your app listens on
-
+            - containerPort: 80 # Replace with the port your Tetris game listens on
